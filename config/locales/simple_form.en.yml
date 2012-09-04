@@ -1,0 +1,52 @@
+en:
+  simple_form:
+    day: &simple_day
+      "day"
+    month: &simple_month
+      "month"
+    year: &simple_year
+      "year"
+    "yes": 'Yes'
+    "no": 'No'
+    required:
+      # text: 'required'
+      # mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      html: '<span class="simple_form required">*</span>'
+    labels:
+      basic:
+        title: Title
+        full_name: Name
+        official_name: Official name
+        name: Name
+        first_name: First name
+        last_name: Last name
+        known_as: "Known as"
+        known_as_title: Title
+        known_as_first_name: First name
+        known_as_last_name: Last name
+        gender: Gender
+        date_of_birth: Date of birth
+        day_of_birth: *simple_day
+        month_of_birth: *simple_month
+        year_of_birth: *simple_year
+        date_moved_in: &date_moved_in
+          Date moved to this address
+        day_moved_in: *simple_day
+        month_moved_in: *simple_month
+        year_moved_in: *simple_year
+        occupation: "What do you do for a living?"
+        address: Address
+        address_line_1: "1st line of your address"
+        address_line_2: "2nd line of your address"
+        town_city: Town / City
+        county: County
+        postcode: Postcode
+        mobile_phone_number: Mobile phone number
+        home_phone_number: Home phone number
+        work_phone_number: Work phone number
+        other_email_address: Other email address
+    label_hints:
+      basic:
+        occupation: "(eg. Butcher, Baker, Candlestick maker or Retired)"

@@ -1,0 +1,43 @@
+= simple_form_for(@basic, :url => basic_edit_path(@basic), :method => :put, :validate => true) do |f|
+  %blockquote
+    %p
+      Please enter your basic details below:
+  .form-inputs
+    #my-name.basic-name-details
+      .title
+        = f.input :title, required: false, input_html: { :"data-mfl-hint-target" => "div#my-name" }
+      .first-name
+        = f.input :first_name, required: true, input_html: { :"data-mfl-hint-target" => "div#my-name", :"data-mfl-hint-siblings" => "input#consumers_details_basic_last_name" }
+      .last-name
+        = f.input :last_name, required: true, input_html: { :"data-mfl-hint-target" => "div#my-name", :"data-mfl-hint-siblings" => "input#consumers_details_basic_first_name" }
+    #known-as.basic-name-details
+      %label.detail
+        = label_text(:basic, :known_as)
+      .title.known-as
+        = f.input :known_as_title, required: false, input_html: { :"data-mfl-hint-target" => "div#known-as" }, label: false
+      .first-name
+        = f.input :known_as_first_name, required: true, input_html: { :"data-mfl-hint-target" => "div#known-as", :"data-mfl-hint-siblings" => "input#consumers_details_basic_known_as_last_name" }, label: false
+      .last-name
+        = f.input :known_as_last_name, required: true, input_html: { :"data-mfl-hint-target" => "div#known-as", :"data-mfl-hint-siblings" => "input#consumers_details_basic_known_as_first_name" }, label: false
+    = f.input :gender, required: true, :collection => ["Male", "Female"], :prompt => "Select your gender"
+    = render partial: "date_wrapper", locals: { form: f, section: :consumers_details_basic, detail: :date_of_birth, day: :day_of_birth, month: :month_of_birth, year: :year_of_birth }
+    = f.input :occupation, required: true, label: label_with_hint(:basic, :occupation)
+    = f.input :address_line_1, required: true
+    = f.input :address_line_2, required: false
+    = f.input :town_city, required: true
+    = f.input :county, required: false
+    = f.input :postcode, required: true
+    = render partial: "date_wrapper", locals: { form: f, section: :consumers_details_basic, detail: :date_moved_in, day: :day_moved_in, month: :month_moved_in, year: :year_moved_in }
+    .hr
+    = f.input :mobile_phone_number, as: :tel
+    = f.input :work_phone_number, as: :tel
+    = f.input :home_phone_number, as: :tel
+    = f.input :other_email_address, input_html: { validate: true, :"data-mfl-valid-unless-empty" => true }
+  %p.required-fields
+    %span.required="*"
+    indicates that this information must be completed.
+  .hr
+  -# .form-actions
+  -#   %p
+  -#     = render partial: "locker/cancel_button", locals: { path: locker_consumer_about_me_basic_path }
+  -#     = render partial: "locker/save_button", locals: { form: f }

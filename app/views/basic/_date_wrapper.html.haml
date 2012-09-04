@@ -1,0 +1,19 @@
+- required_label = local_assigns.fetch(:required_label, true)
+- required       = local_assigns.fetch(:required, true)
+- empty_only     = local_assigns.fetch(:empty_only, false)
+- label_text     = local_assigns.fetch(:label_text, label_text(section, detail))
+- hint_target    = "date_wrapper_#{section}_#{detail}"
+%div{ id: hint_target, class: "date-wrapper" }
+  %label.detail
+    - if required && required_label
+      %span.simple_form.required *
+    = label_text
+  .date-with-day-included
+    .notable_date_day
+      = form.input day, required: false, as: :string, input_html: { validate: false, :"data-mfl-hint-target" => "##{hint_target}", :"data-mfl-validate-proxy" => "input##{section}_#{detail}", size: 2, maxlength: 2 }
+    .notable_date_month
+      = form.input month, required: false, as: :string, input_html: { validate: false, :"data-mfl-hint-target" => "##{hint_target}", :"data-mfl-validate-proxy" => "input##{section}_#{detail}", size: 2, maxlength: 2 }
+    .notable_date_year
+      = form.input year, required: false, as: :string, input_html: { validate: false, :"data-mfl-hint-target" => "##{hint_target}", :"data-mfl-validate-proxy" => "input##{section}_#{detail}", size: 4, maxlength: 4 }
+.hidden
+  = form.input detail, required: false, input_html: { validate: true, :"data-mfl-hint-target" => "##{hint_target}",  :"data-mfl-date-elements" => "input##{section}_#{day},input##{section}_#{month},input##{section}_#{year}", :"data-mfl-valid-unless-empty" => empty_only }

@@ -1,0 +1,10 @@
+== Phrase / Simple Form integration test
+  The app shows how the labels/placeholders don't 'walk the stack' of labels available to find the correct label, i.e.
+  
+    simple_form.labels.basic.edit.title, instead of finding simple_form.labels.basic.title
+    
+  when running without Phrase, SimpleForm finds the correct label.
+  
+  Also, editing the Basic object that is created through ```rake db:seed``` has a 27 second page generation when using Phrase.
+  
+  (just hit the home page to go to the edit form)
