@@ -15,9 +15,9 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: phrase_simple_form_development
+  database: csv_simple_form_development
   pool: 5
-  username: phrase_simple_form
+  username: csv_simple_form
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -41,15 +41,15 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: phrase_simple_form_test
+  database: csv_simple_form_test
   pool: 5
-  username: phrase_simple_form
+  username: csv_simple_form
   password:
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: phrase_simple_form_production
+  database: csv_simple_form_production
   pool: 5
-  username: phrase_simple_form
+  username: csv_simple_form
   password:

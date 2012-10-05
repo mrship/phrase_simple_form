@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-PhraseSimpleForm::Application.load_tasks
+CSVSimpleForm::Application.load_tasks

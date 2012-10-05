@@ -1,4 +1,4 @@
-PhraseSimpleForm::Application.routes.draw do
+CSVSimpleForm::Application.routes.draw do
   root to: "basic#edit"
-  put "basic/:id", to: "basic#update", as: :basic_edit
+  post "basic", to: "basic#update", as: :basic_update
 end

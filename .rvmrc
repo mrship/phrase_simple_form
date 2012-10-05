@@ -1,1 +1,1 @@
-rvm use 1.9.2@phrase_simple_form
+rvm use 1.9.2@csv_simple_form --create

@@ -4,7 +4,8 @@ class BasicController < ApplicationController
   end
   
   def edit
-    @basic = Basic.all.first
+    @basic = Basic.new
+    @basic.client_side_override = true
     render
   end
 end
